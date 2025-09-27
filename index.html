@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Presentation Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Custom scrollbar for a cleaner look - Light Theme */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+      }
+      .dot-grid {
+        background-color: #F3F4F6; /* bg-gray-100 */
+        background-image: radial-gradient(#d1d5db 1px, transparent 0); /* gray-300 */
+        background-size: 20px 20px;
+      }
+      /* Custom styling for details/summary accordion */
+      details > summary {
+        list-style: none;
+      }
+      details > summary::-webkit-details-marker {
+        display: none;
+      }
+      details summary .accordion-arrow {
+        transition: transform 0.2s;
+      }
+      details[open] summary .accordion-arrow {
+        transform: rotate(90deg);
+      }
+      .popover {
+        position: fixed;
+        z-index: 50;
+      }
+      .gradient-slider-handle {
+        position: absolute;
+        top: -4px;
+        width: 16px;
+        height: 32px;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        transform: translateX(-50%);
+        cursor: grab;
+        border: 2px solid white;
+      }
+      .gradient-slider-handle.active {
+        border-color: #3b82f6; /* blue-500 */
+      }
+      .gradient-slider-handle:active {
+        cursor: grabbing;
+      }
+      .gradient-slider-handle-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+      }
+      .color-picker-saturation {
+        position: relative;
+        width: 100%;
+        height: 140px;
+        background-image: linear-gradient(to right, white, transparent), linear-gradient(to top, black, transparent);
+        cursor: crosshair;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .color-picker-handle {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border: 2px solid white;
+        border-radius: 50%;
+        transform: translate(-8px, -8px);
+        box-shadow: 0 0 0 1.5px rgba(0,0,0,0.5), inset 0 0 0 1.5px rgba(0,0,0,0.5);
+        pointer-events: none;
+      }
+      .hue-slider {
+        position: relative;
+        width: 100%;
+        height: 16px;
+        background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      .hue-slider-handle {
+          position: absolute;
+          width: 8px;
+          height: 20px;
+          top: -2px;
+          border: 2px solid white;
+          border-radius: 2px;
+          transform: translateX(-4px);
+          box-shadow: 0 0 2px rgba(0,0,0,0.5);
+          pointer-events: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.21.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-100 text-gray-800 font-sans" style="font-family: 'Inter', sans-serif;">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

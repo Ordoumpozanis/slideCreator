@@ -1,0 +1,5 @@
+{
+  "name": "Live Presentation Designer",
+  "description": "A web application to design custom presentations using reusable slide templates. Features a drag-and-drop canvas, element property customization, brand management, and a live presentation mode.",
+  "requestFramePermissions": []
+}
